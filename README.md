@@ -54,4 +54,4 @@ You can also check out the [implementation repo (link pending)] when it's ready,
 
 Because it's a direct frontal assault on the default "separation of concerns", and because it structurally distinguishes between cause and effect. What started as a capability-secured graph runtime evolved into something a little stranger — a fusion of compositional algebra, decorated categorical semantics, and a local, verifiable way to model trust. Whether or not that turns out to be novel, I’ve learned a ton along the way. Maybe you will too.
 
-Thanks for stopping by
+Thanks for stopping by!
