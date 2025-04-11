@@ -155,7 +155,17 @@ In essence, the Unified Effect System provides a framework where composition, se
    - Verification Through Decorated PROPs
    - Practical Applications and Examples
 
-3. Visual Representation through String Diagrams
+3. Capability Structure and Compositional Scope
+   - Introduction: From Tokens to Type-Level Structure
+   - Capabilities as Decorations on Morphisms
+   - Compositional Semantics of Capability Contexts
+   - Capability Attenuation and Delegation
+   - Capability Structures over Patterns
+   - Capability-Aware Equivalence and Optimization
+   - Future Extensions
+
+
+4. String Diagram Semantics and Visual Grammar
    - Introduction to String Diagrams
    - Fundamentals of String Diagrams
    - Composition Operations in String Diagrams
@@ -169,7 +179,7 @@ In essence, the Unified Effect System provides a framework where composition, se
    - Protocol Integration with String Diagrams
    - Computational Aspects of String Diagrams
 
-4. Linear Logic Foundations
+5. Linear Logic Foundations
    - Introduction to Linear Logic
    - Linear Logic Connectives and Rules
    - Resource Management in Linear Logic
@@ -304,12 +314,13 @@ In essence, the Unified Effect System provides a framework where composition, se
    - Conclusion: The Power of Algebraic Rewriting
 
 4. Scheduling, Resolution, and Flow Materialization
-   - [In Progress]
+   - [Under Development]
 
-5. (Optional) Effect Normal Forms and Optimization Strategies
-   - [In Progress]
+5. Effect Normal Forms and Optimization Strategies
+   - [Under Development]
 
-6. (Optional) Case Studies and Pattern Libraries
+6. Case Studies and Pattern Libraries
+   - [Under Development]
 
 
 ## Appendices
