@@ -1,5 +1,5 @@
 # Part II: Mathematical Frameworks
-# Section 4: Linear Logic Foundations
+# Section 5: Linear Logic Foundations
 
 ## 1. Introduction to Linear Logic
 
