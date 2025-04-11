@@ -3,7 +3,11 @@
 
 ## 1. Introduction to Capability Security
 
-Capability-based security represents a fundamental paradigm shift in how we approach access control and authority management in computing systems. Rather than separating the questions of "what is being accessed?" and "who can access it?" into different mechanisms, capability security unifies these concerns into a single, coherent model.
+When designing secure systems, we often ask two questions: *What is being accessed?* and *Who is allowed to access it?* Traditional approaches answer these separately. Capability-based security answers both at once—with a single concept called a **capability**.
+
+This unified approach resolves fundamental challenges in system security by treating access control not as a matter of identity, but as a matter of possession. In capability systems, having a capability is both necessary and sufficient for accessing a resource—eliminating the need for global permission tables and identity checks.
+
+> **Note:** One of the most intuitive explanations of capabilities comes from the designers of the E programming language, who emphasized how authority flows along chains of explicit connection. Mark S. Miller, Chip Morningstar, and Bill Frantz developed this in ["Capability-based Financial Instruments"](http://www.erights.org/elib/capability/ode/index.html), also known as "An Ode to the Granovetter Diagram."
 
 ### 1.1 Definition and Core Concept
 
@@ -26,7 +30,7 @@ In capability systems:
 
 This model stands in contrast to traditional access control lists (ACLs), which maintain global mappings of subjects to permissions. In capability systems, authority is localized to the entities that possess capabilities, eliminating the need for global permission tables and identity-based authorization.
 
-### 1.2 Comparison with Traditional Access Control Models
+### 1.2 Comparing ACLs and Capabilities: Two Models of Authority
 
 To better understand the unique advantages of capability security, let's contrast it with traditional access control models:
 
@@ -70,27 +74,19 @@ When Bob attempts access:
 
 The fundamental difference is that in the capability model, Bob does not need to be identified as "Bob"—he simply needs to possess the appropriate capability. This shift eliminates the need for identity-based decisions and the vulnerabilities they introduce.
 
-### 1.4 Key Benefits for the Unified Effect System
+## 2. The Granovetter Principle: Only Connectivity Begets Connectivity
 
-Capability security provides several crucial benefits that make it an ideal foundation for the Unified Effect System:
+At the heart of capability-based security lies a profound principle: **Only connectivity begets connectivity**. This principle, named after sociologist Mark Granovetter's work on social network theory, states that new connections between entities can only be established through existing connections.
 
-1. **Explicit Authorization**: All effects require explicit capabilities, ensuring clear authorization paths
-2. **Composable Security**: Security properties can be reasoned about compositionally
-3. **Least Authority**: Components receive only the minimum capabilities needed
-4. **Delegation Control**: Capability transfer follows explicit rules
-5. **Verification**: Authority paths can be formally verified
+> **The Granovetter Principle**
+>
+> A component can only obtain a capability if another component that already possesses that capability (or the authority to create it) explicitly provides it. New capabilities cannot spontaneously appear or be acquired through indirect means.
 
-This connection between capabilities and effects is central to the Unified Effect System, as we will see in later sections.
-
-## 2. The Granovetter Operator: Only Connectivity Begets Connectivity
-
-At the heart of capability-based security lies a profound principle we call the "Granovetter Operator" (named after sociologist Mark Granovetter's work on social network theory): **Only connectivity begets connectivity**. This principle states that new connections between entities can only be established through existing connections.
+This principle is fundamental to understanding how authority flows in capability systems—through explicit, controllable, and auditable paths.
 
 ### 2.1 Fundamental Principle Explanation
 
-The Granovetter Operator embodies a simple yet powerful idea: a component can only obtain a capability if another component that already possesses that capability (or the authority to create it) explicitly provides it. New capabilities cannot spontaneously appear or be acquired through indirect means.
-
-This principle manifests through two primary mechanisms:
+The Granovetter Principle manifests through two primary mechanisms:
 
 1. **Creation-Based Trust**: A parent entity can create child entities, establishing initial trust and granting initial capabilities.
 
@@ -100,7 +96,7 @@ These mechanisms ensure that all authority in the system flows through explicit,
 
 ### 2.2 Mathematical Formulation
 
-We can formalize the Granovetter Operator as follows:
+We can formalize the Granovetter Principle as follows:
 
 Let's define `C(A,R)` to mean "entity A has a capability to resource R." The Granovetter principle states that for any entity B to gain a capability to R, one of the following must be true:
 
@@ -124,7 +120,7 @@ This principle has profound implications for system security:
 
 ### 2.4 Application in the Unified Effect System
 
-In the Unified Effect System, the Granovetter Operator governs how effects are authorized:
+In the Unified Effect System, the Granovetter Principle governs how effects are authorized:
 
 - Effects require specific capabilities to execute
 - Capability requirements form explicit dependency chains
@@ -475,7 +471,7 @@ When effects cross boundaries between domains, capability security principles ar
 - Boundary crossing requires explicit capabilities
 - Capabilities are verified at validation gates
 - Capability attenuation can occur at boundaries
-- Capability delegation follows the Granovetter Operator
+- Capability delegation follows the Granovetter Principle
 
 This ensures that cross-domain interactions maintain the security properties of capability systems.
 
@@ -505,8 +501,8 @@ This correspondence ensures that the rich patterns developed in capability syste
 
 ## 7. Conclusion
 
-Capability-based security provides the foundation for the Unified Effect System, offering a principled approach to authority management. By building on the key principles—only connectivity begets connectivity, reference as capability, and object-capability models—the effect system inherits the strong security properties of capability-based systems.
+Capability-based security provides the foundation for the Unified Effect System, offering a principled approach to authority management. By building on the key principles—the Granovetter Principle, reference as capability, and object-capability models—the effect system inherits the strong security properties of capability-based systems.
 
-The unification of designation and authority in capabilities parallels the unification of resource operations, security boundaries, and protocol steps in effects. This shared philosophical approach creates a cohesive framework where security is woven into the basic structure of the system rather than added as an afterthought.
+In the Unified Effect System, **every effect requires one or more capabilities to be executed**. Capabilities govern what is possible. Effects govern what is done. By tracing capability chains and enforcing capability-based validation, the UES ensures that every action flows through an explicitly granted path of authority.
 
 As we move forward to explore security domains and effect fundamentals in the following sections, these capability principles will remain central to our understanding of the Unified Effect System.
