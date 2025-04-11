@@ -1,5 +1,5 @@
 # Part II: Mathematical Frameworks
-# Section 3: Visual Representation through String Diagrams
+# Section 4: String Diagram Semantics and Visual Grammar
 
 ## 1. Introduction to String Diagrams
 
